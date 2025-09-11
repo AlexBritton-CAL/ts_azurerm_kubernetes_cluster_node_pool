@@ -16,7 +16,7 @@ locals {
 
       node_public_ip_enabled = false
 
-      vnet_subnet_id               = "/subscriptions/7a6ebd58-54ee-4885-88d7-7258df76bacc/resourceGroups/np-spok2-uks-network-rg/providers/Microsoft.Network/virtualNetworks/np-spok2-uks-vnet/subnets/aks-snet" # UPDATE LATER - Provide subnet ID if using existing VNet
+      vnet_subnet_id               = vnet_subnet_id               = "/subscriptions/${var.global_config.global.subscription_id}/resourceGroups/${var.global_config.global.spoke.network.resource_group_name}/providers/Microsoft.Network/virtualNetworks/${var.global_config.global.spoke.network.virtual_network_name}/subnets/aks-snet"
 
       upgrade_settings = {
         drain_timeout_in_minutes      = 0
