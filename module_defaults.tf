@@ -16,6 +16,8 @@ locals {
 
       node_public_ip_enabled = false
 
+      vnet_subnet_id               = "/subscriptions/7a6ebd58-54ee-4885-88d7-7258df76bacc/resourceGroups/np-spok2-uks-network-rg/providers/Microsoft.Network/virtualNetworks/np-spok2-uks-vnet/subnets/aks-snet" # UPDATE LATER - Provide subnet ID if using existing VNet
+
       upgrade_settings = {
         drain_timeout_in_minutes      = 0
         max_surge                     = "10%"

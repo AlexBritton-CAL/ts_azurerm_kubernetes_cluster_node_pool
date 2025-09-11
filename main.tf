@@ -28,6 +28,8 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
 
   node_public_ip_enabled = local.kubernetes_cluster_node_pool.node_public_ip_enabled
 
+  vnet_subnet_id = local.kubernetes_cluster_node_pool.vnet_subnet_id
+
   upgrade_settings {
     drain_timeout_in_minutes      = local.kubernetes_cluster_node_pool.upgrade_settings.drain_timeout_in_minutes
     max_surge                     = local.kubernetes_cluster_node_pool.upgrade_settings.max_surge
