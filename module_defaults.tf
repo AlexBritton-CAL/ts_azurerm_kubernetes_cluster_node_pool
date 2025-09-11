@@ -14,6 +14,8 @@ locals {
 
       temporary_name_for_rotation = "${var.name}temp"
 
+      node_public_ip_enabled = false
+
       upgrade_settings = {
         drain_timeout_in_minutes      = 0
         max_surge                     = "10%"

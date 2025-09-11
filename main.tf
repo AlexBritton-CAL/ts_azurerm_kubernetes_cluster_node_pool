@@ -26,6 +26,14 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
 
   temporary_name_for_rotation = local.kubernetes_cluster_node_pool.temporary_name_for_rotation
 
+  node_public_ip_enabled = local.kubernetes_cluster_node_pool.node_public_ip_enabled
+
+  upgrade_settings {
+    drain_timeout_in_minutes      = local.kubernetes_cluster_node_pool.upgrade_settings.drain_timeout_in_minutes
+    max_surge                     = local.kubernetes_cluster_node_pool.upgrade_settings.max_surge
+    node_soak_duration_in_minutes = local.kubernetes_cluster_node_pool.upgrade_settings.node_soak_duration_in_minutes
+  }
+
   tags = local.kubernetes_cluster_node_pool.tags
 
   lifecycle {
