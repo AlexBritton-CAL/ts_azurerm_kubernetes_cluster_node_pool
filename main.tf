@@ -5,7 +5,7 @@ locals {
     local.kubernetes_cluster_node_pool_shallow,
     {
       upgrade_settings = merge(local.module_defaults.node_pool.upgrade_settings, try(var.config.upgrade_settings, {}))
-      tags             = merge(var.global_config.global.tags, local.module_defaults.node_pool.tags, try(var.config.tags, {}))
+      tags             = merge(try(var.global_config.global.tags, {}), local.module_defaults.node_pool.tags, try(var.config.tags, {}))
     }
   )
 }
