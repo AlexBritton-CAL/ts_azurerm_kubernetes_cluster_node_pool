@@ -5,7 +5,7 @@ locals {
       node_count = 2
 
       min_count            = 1
-      max_count            = 3
+      max_count            = 4
       auto_scaling_enabled = true
 
       vm_size  = "Standard_B4ms"
